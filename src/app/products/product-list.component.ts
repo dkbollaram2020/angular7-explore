@@ -9,9 +9,7 @@ import { ProductService } from './product.service';
 })
 export class ProductListComponent implements OnInit {
   pageTitle = 'Product List';
-  imageWidth = 50;
-  imageMargin = 2;
-  showImage = false;
+
   errorMessage = '';
 
   _listFilter = '';
@@ -40,9 +38,7 @@ export class ProductListComponent implements OnInit {
       product.productName.toLocaleLowerCase().indexOf(filterBy) !== -1);
   }
 
-  toggleImage(): void {
-    this.showImage = !this.showImage;
-  }
+
 
   ngOnInit(): void {
     this.productService.getProducts().subscribe(
